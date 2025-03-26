@@ -1,0 +1,22 @@
+{
+    "cities": [
+        {
+            "name": "Espergaerde",
+            "displayName": "Espergærde",
+            "lat": "55.99",
+            "lng": "12.54"
+        },
+        {
+            "name": "Jammerbugten",
+            "displayName": "Jammerbugten",
+            "lat": "57.31",
+            "lng": "9.66"
+        },
+        {
+            "name": "Schausende",
+            "displayName": "Schausende",
+            "lat": "54.86",
+            "lng": "9.57"
+        }
+    ]
+}
