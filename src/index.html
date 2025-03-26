@@ -3,27 +3,28 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- FAVICON: --> <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
-        <title>walrusWaves</title>
-        
-        <!-- NORMALIZE.CSS: --> <!-- <link rel="stylesheet" href="styles/normalize.css"> -->
-        <link rel="stylesheet" href="styles/style.css">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <title>WalrusWaves</title>
+
+        <link rel="stylesheet" href="styles/normalize.css">
+        <link rel="stylesheet" href="styles/base.css">
     </head>
     <body>
         <header>
-            <h1>walrusWaves</h1>
+            <h1 id="brand-name">walrusWaves</h1>
         </header>
         <main>
-            <!-- TEST CONTAINER, REPLACE WITH JS -->
-            <div class="container">
-                <div id="conditions">
-                    <p><strong>Water Temperature:</strong> <span id="temp">Loading...</span></p>
-                    <p><strong>Tide Times:</strong> <span id="tide">Loading...</span></p>
-                    <p><strong>Wind Speed & Direction:</strong> <span id="wind">Loading...</span></p>
-                    <p><strong>Weather Conditions:</strong> <span id="weather">Loading...</span></p>
-                </div>
-            </div>
+
         </main>
-        <!-- JS SCRIPT(S) --> <!-- <script src="scripts/script.js"></script> -->
+        <footer>
+            <div id="menu-bar">
+                <img id="home" class="menu-icon" src="images/home-icon.webp" alt="Home icon by Microsoft">
+                <img id="weather" class="menu-icon" src="images/weather-icon.webp" alt="Weather icon by Microsoft">
+                <img id="settings" class="menu-icon" src="images/settings-icon.webp" alt="Settings icon by Microsoft">
+            </div>
+        </footer>
+
+        <script src="scripts/main.js" type="module"></script>
+        
     </body>
 </html>
