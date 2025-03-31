@@ -33,14 +33,6 @@ function settingsPageContent() {
                 <span id="settings-speed-mph" class="imperial">mph</span>
             </div>
         </div>
-        <div id="change-length">
-            <span class="settings-unit-desc">Length</span>
-            <div class="settings-unit-value">
-                <span id="settings-length-m" class="metric">m</span>
-                <span class="vertical-divider">/</span>
-                <span id="settings-length-ft" class="imperial">ft</span>
-            </div>
-        </div>
     </div>
     <div id="impressum">
         <span id="about-link">About</span>
@@ -107,14 +99,11 @@ function renderSettingsPage() {
 
     displayStoredUnitChoice('settings-temp', '#settings-temp-f', '#settings-temp-c');
     displayStoredUnitChoice('settings-speed', '#settings-speed-mph', '#settings-speed-kmh');
-    displayStoredUnitChoice('settings-length', '#settings-length-ft', '#settings-length-m');
 
     storeUnit('settings-temp', '#settings-temp-c', '#settings-temp-f');
     storeUnit('settings-temp', '#settings-temp-f', '#settings-temp-c');
     storeUnit('settings-speed', '#settings-speed-kmh', '#settings-speed-mph');
     storeUnit('settings-speed', '#settings-speed-mph', '#settings-speed-kmh');
-    storeUnit('settings-length', '#settings-length-m', '#settings-length-ft');
-    storeUnit('settings-length', '#settings-length-ft', '#settings-length-m');
 
 }
 
