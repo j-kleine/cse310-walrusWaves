@@ -2,6 +2,7 @@ import { removePageContent, switchActiveMenuIcon } from "./switchPage.mjs";
 import { getSavedLocation, displaySavedLocation, setSavedLocation } from "./utils.mjs";
 import { displayStoredUnitChoice, storeUnit } from "./unitSwitcher.mjs";
 
+// Function to create the settings page content, returning a string of HTML that will be inserted into the main element of the page
 function settingsPageContent() {
     return `
     <div id="location-seeker" class="weather-location-seeker">
@@ -41,6 +42,8 @@ function settingsPageContent() {
     `
 }
 
+// Function to create the impressum content, returning a string of HTML that will be inserted into the impressum popup
+// The HTML includes a message with the year and the author's name, as well as attributions for fonts, menu icons, and the background image
 function impressumContent() {
     return `
     <div id="impressum-message">
@@ -56,6 +59,7 @@ function impressumContent() {
     `
 }
 
+// Function to render the settings page, setting the document title, clearing the main content, and then populates it with the settings page content
 function renderImpressum() {
     // add eventlistener 'click' to about button
     document.querySelector('#about-link').addEventListener('click', () => {
@@ -78,6 +82,7 @@ function renderImpressum() {
     })
 }
 
+// Function to render the settings page
 function renderSettingsPage() {
     // set document title to '... Settings'
     document.title = 'walrusWaves | Settings';
@@ -107,6 +112,8 @@ function renderSettingsPage() {
 
 }
 
+// Function to load the settings page
+// This function adds an event listener to the settings icon in the bottom menu bar
 export function loadSettingsPage() {
     // add eventlistener 'click' to settings icon
     document.querySelector('#settings').addEventListener('click', () => {

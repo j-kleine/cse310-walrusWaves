@@ -1,6 +1,9 @@
 import { removePageContent, switchActiveMenuIcon } from "./switchPage.mjs";
 import { getSavedLocation, displaySavedLocation, setSavedLocation } from "./utils.mjs";
 
+// Function to create the weather page content, returning a string of HTML that will be inserted into the main element of the page
+// The HTML includes a select dropdown for choosing a location, a weather widget box with air and water temperature, and a weather info container with additional information
+// The weather widget box includes labels for air and water, values for temperature, and units for temperature
 function weatherPageContent() {
     return `
     <div id="location-seeker" class="weather-location-seeker">
@@ -40,6 +43,8 @@ function weatherPageContent() {
     `
 }
 
+// Function to render the weather page
+// This function sets the document title, clears the main content, and populates it with the weather page content
 export function renderWeatherPage() {
     // set document title to '... Weather'
     document.title = 'walrusWaves | Weather';
@@ -58,6 +63,8 @@ export function renderWeatherPage() {
     setSavedLocation();
 }
 
+// Function to load the weather page
+// This function adds an event listener to the weather icon in the bottom menu bar
 export function loadWeatherPage() {
     // add eventlistener 'click' to weather icon
     document.querySelector('#weather').addEventListener('click', () => {

@@ -11,6 +11,7 @@ export function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
 
+// Function to check if the user has selected a location and set the saved location accordingly
 export function setSavedLocation(selectedLocation) {
   if (selectedLocation) {
     renderWeatherPage();
@@ -37,17 +38,20 @@ export function setSavedLocation(selectedLocation) {
   }
 }
 
+// Function to check if the user has selected a location and set the saved location accordingly
 export function getSavedLocation() {
   const selectedLocation = getLocalStorage('select-location');
   return selectedLocation
 }
 
+// Function to check if there is already a selected location and display the saved location in the dropdown as current value
 export function displaySavedLocation(selectedLocation) {
   if (selectedLocation) {
     document.querySelector('#plunge-select').value = selectedLocation;
   }
 }
 
+// Function to get the coordinates of the selected location, fetches the coordinates of the selected location from a JSON file and returns them
 async function findCoordinates(selectedLocation) {
   const cityListURL = 'https://j-kleine.github.io/cse310-walrusWaves/src/json/cityList.json';
   const response = await fetch(cityListURL);
@@ -68,6 +72,7 @@ async function findCoordinates(selectedLocation) {
   }
 }
 
+// Function to create the URL for the weather data API for the selected location
 async function createWeatherURL(selectedLocation) {
   return findCoordinates(selectedLocation).then(coordinate => {
         // const name = coordinate.displayName;
@@ -90,6 +95,7 @@ async function createWeatherURL(selectedLocation) {
       })
 }
 
+// Function to create the URL for the astro data API for the selected location (sunrise & sunset)
 async function createAstroURL(selectedLocation) {
   return findCoordinates(selectedLocation).then(coordinate => {
         // const name = coordinate.displayName;
@@ -105,6 +111,7 @@ async function createAstroURL(selectedLocation) {
       })
 }
 
+// Function to create the URL for the water data API for the selected location (water temperature) and then fetch the data and display it on the page
 async function createWaterURL(selectedLocation) {
   return findCoordinates(selectedLocation).then(coordinate => {
         // const name = coordinate.displayName;
@@ -126,6 +133,7 @@ async function createWaterURL(selectedLocation) {
       })
 }
 
+// Function to fetch the weather data from the API and display it on the page
 async function weatherAPI(URL) {
   try {
       const response = await fetch(URL);
@@ -141,6 +149,7 @@ async function weatherAPI(URL) {
   }
 }
 
+// Function to fetch the astro data from the API and display it on the page
 async function astroAPI(URL) {
   try {
       const response = await fetch(URL);
@@ -156,6 +165,7 @@ async function astroAPI(URL) {
   }
 }
 
+// Function to display the current weather data on the page (binding it to the HTML elements)
 function displayCurrentWeather(data) {
   const tempUnit = checkStoredUnit('settings-temp');
   const speedUnit = checkStoredUnit('settings-speed');
@@ -197,6 +207,7 @@ function displayCurrentWeather(data) {
 
 }
 
+// Function to display the current astro data (sunrise & sunset) on the page (binding it to the HTML elements)
 function displayCurrentAstro(data) {
   const sunriseTime = document.querySelector('#sunrise-time');
   const sunsetTime = document.querySelector('#sunset-time');
@@ -212,6 +223,7 @@ function displayCurrentAstro(data) {
   sunsetTime.innerHTML = dayjs(referenceDate + sunsetTimeString, 'YYYY-MM-DD h:mm A').format('HH:mm');
 }
 
+// Function to display the current water temperature data on the page (binding it to the HTML elements)
 function displayCurrentWater(data) {
   const tempUnit = checkStoredUnit('settings-temp');
 
