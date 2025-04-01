@@ -203,8 +203,13 @@ function displayCurrentAstro(data) {
 
   // console.log(JSON.stringify(data));
 
-  sunriseTime.innerHTML = data.forecast.forecastday[0].astro.sunrise;
-  sunsetTime.innerHTML = data.forecast.forecastday[0].astro.sunset;
+  const sunriseTimeString = data.forecast.forecastday[0].astro.sunrise;
+  const sunsetTimeString = data.forecast.forecastday[0].astro.sunset;
+  
+  const referenceDate = dayjs().format('YYYY-MM-DD') + ' ';
+
+  sunriseTime.innerHTML = dayjs(referenceDate + sunriseTimeString, 'YYYY-MM-DD h:mm A').format('HH:mm');
+  sunsetTime.innerHTML = dayjs(referenceDate + sunsetTimeString, 'YYYY-MM-DD h:mm A').format('HH:mm');
 }
 
 function displayCurrentWater(data) {
@@ -212,7 +217,7 @@ function displayCurrentWater(data) {
 
   const waterTemp = document.querySelector('#water-temp-value');
 
-  console.log(JSON.stringify(data));
+  // console.log(JSON.stringify(data));
 
   let roundedWaterTemp;
 
