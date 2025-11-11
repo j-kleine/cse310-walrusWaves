@@ -216,14 +216,11 @@ function displayCurrentAstro(data) {
 
   const sunriseTimeValue = data.forecast.forecastday[0].astro.sunrise;
   const sunsetTimeValue = data.forecast.forecastday[0].astro.sunset;
-  
-  const referenceDate = dayjs().format('YYYY-MM-DD') + ' ';
 
-  const sunriseTimeString = dayjs(referenceDate + sunriseTimeValue, 'YYYY-MM-DD h:mm A').format('HH:mm');
-  const sunsetTimeString = dayjs(referenceDate + sunsetTimeValue, 'YYYY-MM-DD h:mm A').format('HH:mm');
+  console.log('Sunrise raw: ' + sunriseTimeValue + ' | Sunset raw: ' + sunsetTimeValue);
 
-  sunriseTime.innerHTML = sunriseTimeString.toString();
-  sunsetTime.innerHTML = sunsetTimeString.toString();
+  sunriseTime.innerHTML = sunriseTimeValue;
+  sunsetTime.innerHTML = sunsetTimeValue;
 }
 
 // Function to display the current water temperature data on the page (binding it to the HTML elements)
